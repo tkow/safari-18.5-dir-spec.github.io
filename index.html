@@ -1,17 +1,21 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-<head></head>
-<body>
-  <div style="width: 100%;" dir="rtl">
-    <div style=" width: 108px;" id="parent">
-      <p id="text" >test</p>
+  <head></head>
+  <body>
+    <div id="root" style="overflow: hidden; width: 100%; direction: rtl; display: block;" dir="rtl">
     </div>
-  </div>
-  <p id="margin-left"></p>
-  <script defer>  
-    var el = document.querySelector("#margin-left")
-    var marginLeftPx = getComputedStyle(document.querySelector('#parent')).marginLeft
-    el.textContent = "rtl Content Margin Left is:" + marginLeftPx
-  </script>
-</body>
+    <p id="margin-left-check"></p>
+    <script defer>
+      window.initialize = function initialize() {
+        var child = document.createElement(`div`);
+        child.style.height = `0px`;
+        child.style.width = `0px`;
+        document.getElementById('root').appendChild(child);
+        var marginLeftPx = getComputedStyle(child).marginLeft;
+        var el = document.querySelector(`#margin-left-check`);
+        el.textContent = "rtl Content Margin Left is:" + marginLeftPx;
+      }
+      initialize();
+    </script>
+  </body>
 </html>
