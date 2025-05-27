@@ -3,12 +3,14 @@
 <head></head>
 <body>
   <div style="width: 100%;" dir="rtl">
-    <div style=" width: 108px;" id="test">test</div>
+    <div style=" width: 108px;" id="parent">
+      <p id="text" >test</p>
+    </div>
   </div>
   <p id="margin-left"></p>
   <script defer>  
     var el = document.querySelector("#margin-left")
-    var marginLeftPx = getComputedStyle(document.querySelector('#test')).marginLeft
+    var marginLeftPx = getComputedStyle(document.querySelector('#parent')).marginLeft
     el.textContent = "rtl Content Margin Left is:" + marginLeftPx
   </script>
 </body>
