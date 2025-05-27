@@ -1,12 +1,11 @@
 <!DOCTYPE html> 
-<head=""></head>
-<script>
-    document.onload(function() {
-        var el = document.querySelector("margin-left")
-        var marginLeftPx = getComputedStyle(document.querySelector('#test')).marginLeft
-        el.textContent = "rtl Content Margin Left is:" + marginLeftPx
-    })
+<head>
+<script defer>  
+  var el = document.querySelector("margin-left")
+  var marginLeftPx = getComputedStyle(document.querySelector('#test')).marginLeft
+  el.textContent = "rtl Content Margin Left is:" + marginLeftPx
 </script>
+</head>
 <body>
   <div style="width: 100%;" dir="rtl">
     <div style=" width: 108px;" id="test">test</div>
